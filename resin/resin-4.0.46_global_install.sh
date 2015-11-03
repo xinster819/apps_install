@@ -1,9 +1,9 @@
 resin="resin-4.0.46"
 resin_tar="$resin.tar.gz"
 sources="/opt/sources/"
-apps_intall="/opt/apps_intall/"
+apps_install="/opt/apps_install/"
 
-if [[ ! -d "$apps_install$resin" ]] && [[ ! -d "$sources$resin_tar" ]]; then
+if [[ ! -d "$apps_install$resin" ]] && [[ ! -f "$sources$resin_tar" ]]; then
 mkdir -p $source
 cd $sources
 wget -d /opt/sources/ http://caucho.com/download/resin-4.0.46.tar.gz
@@ -14,7 +14,7 @@ if [ ! -d "$apps_install$resin" ]; then
 mkdir -p /opt/apps_install
 mkdir -p /opt
 cd $sources$resin
-./configure --prefix=/opt/apps_install/$resin
+./configure --prefix=$apps_install$resin
 make && make install
 ln -snf $apps_install/$resin /opt/apps/resin
 fi

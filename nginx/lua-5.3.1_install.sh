@@ -1,4 +1,5 @@
 # lua need install readline first; like:  yum install readline-devel
+# 2015-11-19  lua-nginx-module 只支持5.1版本， 5.2及其以上都不支持
 name=lua-5.1.5
 simple_name=lua
 name_tar=$name.tar.gz
